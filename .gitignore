@@ -4,4 +4,4 @@
 .cproject
 /bin-int/*
 Makefile
-GraphStructure.make
+*.make
