@@ -2,7 +2,7 @@
 
 int main()
 {
-	std::cout << "Hello there" << std::endl;
+	std::cout << sizeof(char) << std::endl;
 
 	return 0;
 }
