@@ -11,12 +11,13 @@
 
 */
 #include "MemoryManager.h"
+#include <stdlib.h>
 
 bool MemoryPool::GrowMemoryArray(void)
 {
 	//allocate a new array
 	size_t allocationSize = sizeof(unsigned char*) * (m_memArraySize+1);
-	unsigned char** ppNewMemArray = (unsigned char**)malloc(allocationSize);
+    unsigned char** ppNewMemArray = (unsigned char**)malloc(allocationSize);
 
 	//make sure the allocation succeeded
 	if(!ppNewMemArray)

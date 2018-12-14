@@ -1,3 +1,7 @@
+filter "action:qmake"
+	require "vendor/bin/premake/premake-qmake/qmake"
+filter {}
+
 workspace "MemoryManagment"
 	architecture "x86_64"
 
@@ -13,7 +17,11 @@ workspace "MemoryManagment"
 	}
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
-project "MemoryMamager"
+project "MemoryManager"
+	filter "action:qmake"
+		--location "%{prj.name}"
+	filter {}
+
 	kind "ConsoleApp"
 	language "C++"
 
@@ -23,7 +31,8 @@ project "MemoryMamager"
 	files
 	{
 		"src/**.h",
-		"src/**.cpp"
+		"src/**.cpp",
+		"*.lua"
 	}
 
 	includedirs
@@ -39,3 +48,4 @@ project "MemoryMamager"
 
 	filter "configurations:Release"
 		optimize "On"
+	
